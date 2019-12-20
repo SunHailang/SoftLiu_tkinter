@@ -1,0 +1,24 @@
+{
+    "version": [
+        {
+            "m_key": "Windows",
+            "m_name": "windows",
+            "m_code": "1.0.0.0"
+        },
+        {
+            "m_key": "iMac",
+            "m_name": "imak",
+            "m_code": "1.0.1.0"
+        },
+        {
+            "m_key": "Android",
+            "m_name": "android",
+            "m_code": "1.0.2.0"
+        },
+        {
+            "m_key": "iOS",
+            "m_name": "ios",
+            "m_code": "1.0.3.0"
+        }
+    ]
+}
