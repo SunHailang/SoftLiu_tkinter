@@ -65,7 +65,7 @@ class LoginTkinter(object):
         # 绘制选择的 CheckBox
         self.m_checkList = []
         checkLeftX = 50
-        checkLeftY = 75
+        checkLeftY = 78
         for item in range(8):
             # print(item)
             checkVar = tkinter.IntVar()
@@ -76,9 +76,9 @@ class LoginTkinter(object):
         # 绘制显示验证码图片的Canvas的
         self.m_canvas = tkinter.Canvas(self.tk, width=293,
                                        height=190, background='white')
-        self.m_canvas.place(relx=0.5, rely=0.55, anchor=tkinter.CENTER)
+        self.m_canvas.place(relx=0.5, rely=0.58, anchor=tkinter.CENTER)
         self.m_btn = tkinter.Button(
-            self.tk, text="    Sure    ", command=self.Login_OnClick)
+            self.tk, text="Sure",width=10, height=1, command=self.Login_OnClick)
         self.m_btn.place(relx=0.5, y=self.app_height-20, anchor=tkinter.CENTER)
         # 存放canvas上显示的图片，所以必须用全局变量
         self.imageFile = None
