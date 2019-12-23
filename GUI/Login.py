@@ -13,7 +13,9 @@ import tkinter.messagebox
 from tkinter.font import Font
 from Application import Application
 from PIL import Image
-from ResourcesUtils import *
+import ResourcesUtils
+from Utils import TkinterMessageBox
+import Leftquery
 import json
 
 
@@ -21,6 +23,7 @@ class LoginTkinter(object):
     def __init__(self):
         self.m_userName = ''
         self.m_passWord = ''
+        self.m_loginState = False
         self.app_width = 500
         self.app_height = 350
         self.tk = tkinter.Tk()
@@ -79,6 +82,7 @@ class LoginTkinter(object):
         self.m_btn.place(relx=0.5, y=self.app_height-20, anchor=tkinter.CENTER)
         # 存放canvas上显示的图片，所以必须用全局变量
         self.imageFile = None
+        self.CanvasImage('2.gif')
 
     def ShowPwOrNot(self):
         if self.checkPwVar.get() == 1:
@@ -92,11 +96,11 @@ class LoginTkinter(object):
         answer_list = []
         for i in range(len(self.m_checkList)):
             if self.m_checkList[i].get() == 1:                
-                for j in m_loginAnswer.keys():
+                for j in ResourcesUtils.m_loginAnswer.keys():
                     if i == j:
-                        answer_list.append(m_loginAnswer[j][0])
+                        answer_list.append(ResourcesUtils.m_loginAnswer[j][0])
                         answer_list.append(',')
-                        answer_list.append(m_loginAnswer[j][1])
+                        answer_list.append(ResourcesUtils.m_loginAnswer[j][1])
                         answer_list.append(',')
         s = ''
         for i in answer_list:
@@ -110,7 +114,7 @@ class LoginTkinter(object):
         print(form_check)
         result = -1
         try:
-            loginpost = requestUtils.post(self.url_login, data=form_check, headers=self.headers)
+            loginpost = ResourcesUtils.requestUtils.post(self.url_login, data=form_check, headers=self.headers)
             print(loginpost.text)
             html_login = json.loads(loginpost.text)
             print(html_login)
@@ -129,8 +133,11 @@ class LoginTkinter(object):
             self.m_userName, self.m_passWord))
         if self.m_userName=='' or self.m_passWord=='':
             # mesBox = tkinter.messagebox.askyesno(title='hi', message='Are you sure to cancel it?')  #返回True或者False
-            mesBox = tkinter.messagebox.showerror('错误','用户名或密码为空.')
-            print(mesBox)
+            mesBox = TkinterMessageBox.MessageBoxShowError('错误','用户名或密码为空.')
+            print(mesBox)            
+            # self.loginTkinter.destroy()    
+            self.tk.destroy()      
+            Leftquery.LeftqueryTkinter(self.m_loginState)
             return -1
         form_login = {
             'username': self.m_userName,
@@ -157,8 +164,7 @@ class LoginTkinter(object):
     def GUIShow(self):
         self.tk.mainloop()
 
-
 if __name__ == "__main__":
     top = LoginTkinter()
-    top.CanvasImage('2.gif')
+    #top.CanvasImage('2.gif')
     top.GUIShow()

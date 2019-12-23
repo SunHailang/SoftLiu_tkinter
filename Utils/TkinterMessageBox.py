@@ -10,33 +10,33 @@ import tkinter.filedialog
 
 # 1、提示消息框
 def MessageBoxShowInfo(title, message):
-    tkinter.messagebox.showinfo(title,message)
+    return tkinter.messagebox.showinfo(title,message)
 
 # 2、消息警告框
 def MessageBoxShowWarning(title, message):
-    tkinter.messagebox.showwarning(title, message)
+    return tkinter.messagebox.showwarning(title, message)
 
 # 3、错误消息框
 def MessageBoxShowError(title, message):
-    tkinter.messagebox.showerror(title, message)
+    return tkinter.messagebox.showerror(title, message)
 
 # 4、对话框
 
 # 确定/取消，返回值true/false
 def MessageBoxAskOkCancel(title, message):
-    tkinter.messagebox.askokcancel(title, message)
+    return tkinter.messagebox.askokcancel(title, message)
 
 # 是/否，返回值yes/no
 def MessageBoxAskQuestion(title, message):
-    tkinter.messagebox.askquestion(title, message)
+    return tkinter.messagebox.askquestion(title, message)
 
 # 是/否，返回值true/false
 def MessageBoxAskYesNo(title, message):
-    tkinter.messagebox.askyesno(title, message)
+    return tkinter.messagebox.askyesno(title, message)
 
 # 重试/取消，返回值true/false
 def MessageBoxAskRetryCancel(title, message):
-    tkinter.messagebox.askretrycancel(title, message)
+    return tkinter.messagebox.askretrycancel(title, message)
 
 # 5、文件对话框
 

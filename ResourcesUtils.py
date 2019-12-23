@@ -7,10 +7,15 @@ import requests
 import ssl
 import urllib3
 
+from Utils.TimeUtils import TimeUtils
+
 # don't show warning information
 urllib3.disable_warnings()
 ssl._create_default_https_context = ssl._create_unverified_context
 requestUtils = requests.Session()
+
+# show TimeUtils
+timeUtils = TimeUtils()
 
 # app config db path
 appPath = 'Resources/app.json'
@@ -27,3 +32,4 @@ m_loginAnswer = {
     '6': (167, 120),
     '7': (251, 105)
 }
+
