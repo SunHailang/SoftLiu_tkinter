@@ -159,7 +159,7 @@ class LoginTkinter(object):
     def CanvasImage(self, imagePath):
         print(Image.open(imagePath))
         self.imageFile = tkinter.PhotoImage(file=imagePath)
-        self.m_canvas.create_image(4, 2, anchor='nw', image=self.imageFile)
+        self.m_canvas.create_image(4, 4, anchor='nw', image=self.imageFile)
 
     def GUIShow(self):
         self.tk.mainloop()
