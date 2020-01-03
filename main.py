@@ -3,8 +3,14 @@
 __author__ = 'sun hai lang'
 
 
+import sys, os
+#o_path = os.getcwd()
+# sys.path.append(o_path)
+
 from TkinterData import TkinterData
 import AppDB
+import ResourcesUtils
+from PIL import Image
 
 
 top = TkinterData("Hello World")
@@ -12,10 +18,12 @@ top = TkinterData("Hello World")
 
 versionList = []
 
-appPath = 'Resources/app.json'
+
 
 if __name__ == '__main__':
-    appData = AppDB.fileUtils.ReadJsonData(appPath)
+    path = ResourcesUtils.btnImagePath.format('FE_butt_idle.png')
+    Image.open(path)
+    appData = AppDB.fileUtils.ReadJsonData(ResourcesUtils.appPath)
     print(type(appData))
     AppDB.AddVersionList(appData['version'])
     windows = AppDB.GetVersion('Windows')

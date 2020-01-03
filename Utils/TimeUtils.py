@@ -14,17 +14,25 @@ class TimeUtils(object):
         pass
 
     # 获取时间戳转换的时间
-    def GetTime(self, _ticks):
+    @staticmethod
+    def GetTime(_ticks):
         localtime = time.localtime(_ticks)
         return localtime
 
     # 获取当前时间的时间戳 (向下取整得到一个(int)的整数)
-    def GetTicks(self):
+    @staticmethod
+    def GetTicks():
         return math.floor(time.time())
 
     # 获取某年某月的日历
-    def GetCalendarMonth(self, _year, _month):
+    @staticmethod
+    def GetCalendarMonth( _year, _month):
         return calendar.month(_year, _month)
+    
+    @staticmethod
+    def ShowNowTime(_data):
+        return '{}-{}-{}'.format(_data.year(), _data.mondth(), _data.day())
+    
 
 
 if __name__ == "__main__":
@@ -54,7 +62,7 @@ if __name__ == "__main__":
     print(calendarMonth)
 
     # datetime 获取当前的时间
-    print(datetime.datetime.now())
+    print(datetime.datetime.now().da)
 
 
 
