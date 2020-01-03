@@ -29,13 +29,12 @@ class Application(tkinter.Frame):
 
     def ShowInage(self, filePath, x, y):
         imageFile = tkinter.PhotoImage(file=filePath)
-        self.m_canvas.create_image(x, y, anchor='nw', image=imageFile)
+        return self.m_canvas.create_window(x, y, window=imageFile)
 
-    def ShowInputEntry(self, x, y):
+    def ShowInputEntry(self, x, y, setInfo='', show=''):
         entry_var = tkinter.StringVar()
-        entry = tkinter.Entry(self.m_master,width=20,textvariable=entry_var,show='*')
-        entry.pack()
-        entry_var.set('我是一个Entry')
-        return entry;
+        entry = tkinter.Entry(self.m_master,width=20,textvariable=entry_var,show=show)
+        entry_var.set(setInfo)
+        return self.m_canvas.create_window(x, y, window=entry)
     
         

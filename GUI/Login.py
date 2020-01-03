@@ -7,6 +7,7 @@ __date__ = "2019-12-20"
 import tkinter
 from tkinter.font import Font
 from Application import Application
+from PIL import Image
 
 
 class LoginTkinter(object):
@@ -37,16 +38,14 @@ class LoginTkinter(object):
         self.m_entry_pw.place(x=150, y=50)
         self.m_btn = tkinter.Button(self.tk, text="  Sure  ")
         self.m_btn.place(x=100, y=200)
+        canvas = tkinter.Canvas(self.tk, height=190, width=295)
+        canvas.pack()
+        im = tkinter.PhotoImage(file='GUI/pic.jpg')
+        canvas.create_image(height=190, width=295, anchor='nw', image=im)
 
     def Login_OnClick(self):
         print('Login_OnClick user name:{} , password:{}'.format(
             self.m_userName, self.m_passWord))
-
-    def CanvasImage(self, height, width, filePath):
-        canvas = tkinter.Canvas(self.tk, height=height, width=width)
-        imageFile = tkinter.PhotoImage(file=filePath)
-        image = canvas.create_image(0, 0, anchor='nw', image=imageFile)
-        canvas.pack(side='top')
 
     def GUIShow(self):
         '''
@@ -58,7 +57,7 @@ class LoginTkinter(object):
         canv.ShowLabel('User Name:', 150, 10, font)
         #canv.ShowInputEntry(100, 10)
         '''
-        
+
         self.tk.mainloop()
 
 
