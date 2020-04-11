@@ -15,4 +15,5 @@ class FileUtils(object):
         with open(path,'r') as load_f:
            return json.load(load_f)
 
-
+if __name__ == "__main__":
+    pass

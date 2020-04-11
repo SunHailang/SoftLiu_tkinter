@@ -317,3 +317,6 @@ if __name__ == '__main__':
     tkinter.Button(root, text = '日期:', command = date_str_gain).place(x = 0, y = 0, relx = 1/20, rely = 1/6, width = 200, heigh = 20)
     root.mainloop()
 
+
+if __name__ == "__main__":
+    pass

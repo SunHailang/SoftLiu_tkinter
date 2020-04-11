@@ -18,3 +18,7 @@ class ThreadUtils(threading.Thread):
 
     def run(self):
         self.m_action(self.m_args)
+
+
+if __name__ == "__main__":
+    pass

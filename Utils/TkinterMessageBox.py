@@ -67,3 +67,7 @@ def FileDialogAskOpenFileNames():
 # 多个文件流对象
 def FileDialogAskOpenFiles():
     return tkinter.filedialog.askopenfiles()
+
+
+if __name__ == "__main__":
+    pass

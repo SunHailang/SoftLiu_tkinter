@@ -77,3 +77,7 @@ if __name__ == "__main__":
     print(m_btn)
     m_btn.place(x=200, y=310)
     tk.mainloop()
+
+
+if __name__ == "__main__":
+    pass

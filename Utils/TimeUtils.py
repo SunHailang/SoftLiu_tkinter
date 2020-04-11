@@ -62,7 +62,7 @@ if __name__ == "__main__":
     print(calendarMonth)
 
     # datetime 获取当前的时间
-    print(datetime.datetime.now().da)
+    print(datetime.datetime.now().date)
 
 
 

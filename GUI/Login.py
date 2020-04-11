@@ -20,6 +20,7 @@ import json
 
 
 class LoginTkinter(object):
+    
     def __init__(self):
         self.m_userName = ''
         self.m_passWord = ''
